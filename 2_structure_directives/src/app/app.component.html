@@ -1,0 +1,20 @@
+<h1>{{ title }}</h1>
+<!-- ngIf  -->
+<div *ngIf="isLoggedIn; else loggedOut">Welcome , {{ username }}</div>
+
+<ng-template #loggedOut>Please Login to view the content <br /></ng-template>
+<button (click)="handleLogIn()">
+  {{ isLoggedIn ? "LogOut" : "Login" }}
+</button>
+
+<!-- loops  :  ngFor -->
+<ul style="list-style: none">
+  <li *ngFor="let chr of ch; let i = index">{{ i + 1 }} : {{ chr }}</li>
+</ul>
+
+<!-- ngSwitch  -->
+<div [ngSwitch]="grade">
+  <p *ngSwitchCase="'A'">Execllent</p>
+  <p *ngSwitchCase="'B'">Good</p>
+  <p *ngSwitchDefault>Unknown</p>
+</div>
